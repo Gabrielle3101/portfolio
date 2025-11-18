@@ -17,17 +17,17 @@ export default function Experience() {
 
                         <div>
                             <p>
-                                Contributed to the company marketing site and internal dashboards. Focused on component design,
-                                accessibility fixes, and improving cross-browser reliability.
+                                My first hands-on experience as a web developer. I learned the basics of HTML, CSS, and JavaScript,
+                                and contributed to internal tools and marketing pages under supervision.
                             </p>
 
                             <ul>
-                                <li>Built reusable React components and a simple design system used across 6 pages.</li>
-                                <li>Implemented responsive layouts and improved Lighthouse performance scores by ~18%.</li>
-                                <li>Added semantic HTML and ARIA attributes to improve accessibility test results.</li>
+                                <li>Assisted in building static pages and simple interactive components.</li>
+                                <li>Practiced responsive design and layout structuring using Flexbox and Grid.</li>
+                                <li>Learned version control basics and collaborated using Git.</li>
                             </ul>
 
-                            <p className="meta"><strong>Tech</strong>: React, Sass, Webpack, Lighthouse</p>
+                            <p className="meta"><strong>Tech</strong>: HTML, CSS, JavaScript</p>
                         </div>
                     </article>
 
@@ -39,17 +39,17 @@ export default function Experience() {
 
                         <div>
                             <p>
-                                Worked on new UI features for a logistics dashboard, focusing on real-time data displays and UX flows
-                                for dispatchers. Helped reduce task completion time through UI improvements.
+                                Completed my SIWES internship, where I built and demoed multiple React apps and delivered a final project:
+                                an AI-powered decision-maker app for food and entertainment suggestions.
                             </p>
 
                             <ul>
-                                <li>Implemented real-time charts and status indicators using WebSockets and optimized render loops.</li>
-                                <li>Led the refactor of the tasks list to virtualized rendering, cutting CPU usage on large lists by ~60%.</li>
-                                <li>Collaborated with backend engineers to design an efficient client caching strategy.</li>
+                                <li>Built React apps with routing, state management, and responsive UI.</li>
+                                <li>Designed and implemented the “What Should I Eat/Watch” app with randomized and AI-driven logic.</li>
+                                <li>Documented weekly progress and demoed final project to the team.</li>
                             </ul>
 
-                            <p className="meta"><strong>Tech</strong>: React, GSAP, WebSockets, React-Window, Sass</p>
+                            <p className="meta"><strong>Tech</strong>: React, JavaScript, Tailwind CSS</p>
                         </div>
                     </article>
 
@@ -61,17 +61,17 @@ export default function Experience() {
 
                         <div>
                             <p>
-                                Delivered production websites and micro-apps for small businesses and personal brands. Focused on
-                                performance, maintainability, and design polish.
+                                Delivered websites and micro-apps for small businesses and individuals. Focused on clean design,
+                                performance, and maintainability.
                             </p>
 
                             <ul>
-                                <li>Designed and shipped a portfolio site with Lottie hero animation and CMS-powered blog.</li>
-                                <li>Built an e-commerce landing page with optimized images and critical CSS, improving TTFB and CLS.</li>
-                                <li>Provided ongoing front-end maintenance and performance audits for clients.</li>
+                                <li>Built portfolio sites, landing pages, and interactive forms using React and modern styling tools.</li>
+                                <li>Improved performance scores through image optimization and layout tuning.</li>
+                                <li>Provided ongoing updates and support for client projects.</li>
                             </ul>
 
-                            <p className="meta"><strong>Tech</strong>: React, Next.js, Lottie, GSAP, Netlify/Vercel, Sass</p>
+                            <p className="meta"><strong>Tech</strong>: React, Tailwind CSS, Netlify, Sass</p>
                         </div>
                     </article>
                 </div>
