@@ -5,8 +5,10 @@ const skills = [
     { name: 'CSS/Sass', level: 85 },
     { name: 'JavaScript', level: 80 },
     { name: 'React', level: 75 },
+    { name: 'Node.js', level: 30},
+    { name: 'Git/GitHub', level: 70 },
+    { name: 'Tailwind', level: 50 },
     { name: 'Express', level: 10},
-    { name: 'Node.js', level: 30}
 ];
 
 export default function Skills() {
@@ -16,11 +18,10 @@ export default function Skills() {
         // clear previous refs (in case of HMR / remounts)
         fillsRef.current = fillsRef.current.slice(0, skills.length);
 
-        // animate fills with a small stagger
+        // animate fills with a stagger
         fillsRef.current.forEach((el, i) => {
             if (!el) return;
             const level = skills[i].level;
-            // small stagger for polish
             const t = setTimeout(() => {
                 el.style.width = `${level}%`;
             }, i * 120);
@@ -45,7 +46,7 @@ export default function Skills() {
         <section className="skills section" id="skills">
             <div className="section__header">
                 <h2>Skills</h2>
-                <p>Tools and technologies I frequently use progress shows comfort level.</p>
+                <p>Tools and technologies I frequently use, progress shows comfort level.</p>
             </div>
 
             <div className="section__content">
