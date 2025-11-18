@@ -444,6 +444,12 @@ body.dark-mode {
         .actions {
             margin-top: $space-8;
         }
+
+        @media only screen and (max-width:900px) {
+            h2 {
+                text-align: center;
+            }
+        }
     }
 }
 
