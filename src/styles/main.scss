@@ -590,14 +590,14 @@ body.dark-mode {
     .timeline-item {
         @extend .card;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 35% 60%;
         gap: $space-6;
         align-items: start;
         position: relative;
         overflow: visible;
 
-        @media (min-width: 900px) {
-            grid-template-columns: 320px 1fr;
+        @media only screen and (max-width: 900px) {
+            grid-template-columns: 1fr;
             gap: $space-8;
             padding: $space-8;
         }
