@@ -166,7 +166,7 @@ p {
 }
 
 /* Navbar */
-/* Vertical center-right icon-only nav (polished) */
+/* Vertical center-right icon-only nav */
 .nav-floating,
 nav.nav-floating {
     position: fixed;
@@ -350,6 +350,7 @@ body.dark-mode {
 .hero {
     padding-block: $space-24;
     text-align: center;
+    padding: 20px;
 
     .container {
         display: grid;

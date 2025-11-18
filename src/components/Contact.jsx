@@ -5,54 +5,43 @@ export default function Contact() {
   const [status, setStatus] = useState(null);
   const [sending, setSending] = useState(false);
 
-  async function openMail(e) {
+  async function sendMessage(e) {
     e.preventDefault();
     if (sending) return;
-
+  
     const form = e.target;
-    const name = (form.elements.name?.value || '').trim();
-    const email = (form.elements.email?.value || '').trim();
-    const message = (form.elements.message?.value || '').trim();
-
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+  
     if (!name || !email || !message) {
       setStatus({ type: 'error', text: 'Please fill in all fields.' });
       return;
     }
-
+  
     setSending(true);
-    setStatus({ type: 'info', text: 'Preparing message…' });
-
-    const subject = encodeURIComponent(`Contact from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    const mailto = `mailto:godd3101@gmail.com?subject=${subject}&body=${body}`;
-
+    setStatus({ type: 'info', text: 'Sending message…' });
+  
     try {
-      const opened = window.open(mailto, '_blank');
-      if (!opened) {
-        try {
-          await navigator.clipboard.writeText(`${decodeURIComponent(body)}\n\nSend to: godd3101@gmail.com`);
-          setStatus({
-            type: 'info',
-            text:
-              'Could not open mail client. Message copied to clipboard — paste into your mail app and send to godd3101@gmail.com'
-          });
-        } catch {
-          setStatus({
-            type: 'error',
-            text: 'Could not open mail client and clipboard copy failed. Please email godd3101@gmail.com manually.'
-          });
-        }
+      const res = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
+      });
+  
+      const data = await res.json();
+      if (res.ok) {
+        setStatus({ type: 'success', text: data.message });
+        form.reset();
       } else {
-        setStatus({ type: 'success', text: 'Mail client opened. Please send the message from your mail app.' });
+        setStatus({ type: 'error', text: data.error });
       }
-    } catch {
-      setStatus({ type: 'error', text: 'Could not open mail client. Please email godd3101@gmail.com directly.' });
+    } catch (err) {
+      setStatus({ type: 'error', text: 'Something went wrong. Please try again later.' });
     }
-
-    setTimeout(() => {
-      setSending(false);
-      setTimeout(() => setStatus(null), 4500);
-    }, 800);
+  
+    setSending(false);
+    setTimeout(() => setStatus(null), 4500);
   }
 
   return (
@@ -65,7 +54,7 @@ export default function Contact() {
         </p>
       </div>
 
-      <form onSubmit={openMail} className="contact-form" noValidate>
+      <form onSubmit={sendMessage} className="contact-form" noValidate>
         <label className="field">
           <input type="text" name="name" placeholder="Your Name" required />
         </label>
@@ -82,7 +71,7 @@ export default function Contact() {
           <span className="btn-icon" aria-hidden="true">
             <FiSend size={16} />
           </span>
-          <span className="btn-text">{sending ? 'Opening…' : 'Send'}</span>
+          <span className="btn-text">{sending ? 'Sendng...' : 'Send'}</span>
         </button>
 
         {status && (
